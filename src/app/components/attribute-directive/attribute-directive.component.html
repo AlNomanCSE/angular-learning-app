@@ -1,0 +1,8 @@
+<p >attribute-directive works!</p>
+
+<div>
+    <div class="border w-[200px] h-[100px] rounded-md" [ngClass]="divBgColor">
+    </div>
+     <button [routerLink]="['/struct']">Go to Structural</button>
+    <button (click)="chnageBg()" [ngStyle]="{'background-color':isActrive ?'yellow':'red'}">Change Color</button>
+</div>

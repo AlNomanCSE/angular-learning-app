@@ -1,0 +1,60 @@
+<p>structural-directive works!</p>
+<div class="border flex justify-around">
+    <button (click)="goToAttribute()">Go to Attribute</button>
+    <div
+        class="border w-[200px] h-[100px] bg-orange-500"
+        *ngIf="isDiv1Visiable"
+    >
+        div 1
+    </div>
+    <div class="border w-[200px] h-[100px] bg-red-500" *ngIf="isDiv2Visible">
+        div 2
+    </div>
+    <div class="border w-[200px] h-[100px] bg-green-500" *ngIf="num1 == num2">
+        div 3
+    </div>
+    <div
+        class="border w-[200px] h-[100px] bg-purple-500"
+        *ngIf="selectedState == 'Bangladesh'"
+    >
+        div 4
+    </div>
+    <div>
+        <ol>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ol>
+    </div>
+    <div>
+        <button class="bg-green-500 px-2 py-3 rounded-md" (click)="showDiv1()">
+            Show Div 1
+        </button>
+        <button class="bg-blue-400 px-2 py-3 rounded-md" (click)="hideDiv1()">
+            Hide Div 1
+        </button>
+    </div>
+    <div>
+        <button
+            class="bg-yellow-500 px-2 py-3 rounded-md"
+            (click)="toggleDiv2()"
+        >
+            Toggle Div 2
+        </button>
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="num1" class="border" />
+        <input type="text" [(ngModel)]="num2" class="border" />
+    </div>
+    <div>
+        <!-- <input type="checkbox" [(ngModel)]="isActive"> -->
+        <select [(ngModel)]="selectedState">
+            <option value="">Select</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+        </select>
+
+        <select >
+            <option *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+    </div>
+</div>

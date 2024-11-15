@@ -1,0 +1,43 @@
+<p>ifelse works!</p>
+<div class="border w-fit p-3">
+    <table class="table-auto">
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Roll</th>
+                <th>City</th>
+                <th>Active Or Not</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of students; track $index) {
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.roll }}</td>
+                <td>{{ item.city }}</td>
+                <td class="flex justify-center items-center">
+                    <!-- way 1 -->
+                    <!-- @if (item.isActive) {
+                        <div class="bg-green-500 w-[10px] h-[10px] rounded-full"></div>
+                     }@else {
+                        <div class="bg-red-500 w-[10px] h-[10px] rounded-full"></div>
+                     } -->
+
+                    <!-- way 2 Using ngClass-->
+                    <div
+                        [ngClass]="{
+                            'bg-green-400': item.isActive,
+                            'bg-red-500': !item.isActive
+                        }"
+                        class="w-[10px] h-[10px] rounded-full"
+                    ></div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

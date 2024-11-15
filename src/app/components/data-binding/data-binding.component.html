@@ -1,0 +1,56 @@
+<table class="table-auto">
+    <thead class="bg-slate-600 border flex text-white rounded-lg p-2">
+        <tr>
+            <th>data-binding</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!-- interpolation -->
+            <td class="border">{{ courseName }}</td>
+            <td class="border">{{ isBangladeshi }}</td>
+            <td class="border">{{ currentDate }}</td>
+            <td class="border"><input type="text" [value]="courseName" /></td>
+            <td class="border"><input [type]="inputType" /></td>
+        </tr>
+        <tr>
+            <!-- property binding -->
+            <td [class]="myClassName">{{ courseName }}</td>
+            <td><input type="text" [value]="courseName" /></td>
+        </tr>
+        <tr>
+            <!-- Event binding -->
+            <td colspan="5">
+                <button
+                    class="border px-2 py-3 bg-purple-500"
+                    (click)="showAlert('Hello moto!!!')"
+                >
+                    Show Alert
+                </button>
+            </td>
+            <td>
+                <button
+                    class="border px-2 py-3 bg-red-500"
+                    (click)="changeName()"
+                >
+                    Change Name
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <!-- Two way data binding using ngModel-->
+            <td>
+                <input type="text" [(ngModel)]="courseName" class="border" /> -
+                {{ courseName }}
+                <input type="checkbox" [(ngModel)]="isBangladeshi" />
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Two way data binding Using signal -->
+            <td>
+                <h2>{{ firstName() }}</h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
