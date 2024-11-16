@@ -3,6 +3,7 @@ import { AttributeDirectiveComponent } from './components/attribute-directive/at
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
 import { IfelseComponent } from './components/ifelse/ifelse.component';
+import { TemplateComponent } from './components/forms/template/template.component';
 
 export const routes: Routes = [
     {
@@ -21,4 +22,8 @@ export const routes: Routes = [
         path: 'ifelse',
         component: IfelseComponent,
     },
+    {
+        path:'form',
+        component:TemplateComponent
+    }
 ];

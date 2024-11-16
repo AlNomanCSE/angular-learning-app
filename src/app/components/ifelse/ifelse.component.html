@@ -13,14 +13,14 @@
         </thead>
         <tbody>
             @for (item of students; track $index) {
-            <tr>
+            <tr class="border rounded-full">
                 <td>{{ $index + 1 }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.age }}</td>
                 <td>{{ item.roll }}</td>
                 <td>{{ item.city }}</td>
                 <td class="flex justify-center items-center">
-                    <!-- way 1 -->
+                    <!-- way 1 using @if @else-->
                     <!-- @if (item.isActive) {
                         <div class="bg-green-500 w-[10px] h-[10px] rounded-full"></div>
                      }@else {
@@ -28,11 +28,17 @@
                      } -->
 
                     <!-- way 2 Using ngClass-->
-                    <div
+                    <!-- <div
                         [ngClass]="{
                             'bg-green-400': item.isActive,
                             'bg-red-500': !item.isActive
                         }"
+                        class="w-[10px] h-[10px] rounded-full"
+                    ></div> -->
+
+                    <!-- way 3 Using Ternary operator -->
+                    <div
+                        [class]="item.isActive ? 'bg-green-400' : 'bg-red-500'"
                         class="w-[10px] h-[10px] rounded-full"
                     ></div>
                 </td>
