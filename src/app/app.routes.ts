@@ -4,6 +4,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
 import { IfelseComponent } from './components/ifelse/ifelse.component';
 import { TemplateComponent } from './components/forms/template/template.component';
+import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +24,11 @@ export const routes: Routes = [
         component: IfelseComponent,
     },
     {
-        path:'form',
+        path:'templateForm',
         component:TemplateComponent
+    },
+    {
+        path:'reactiveForm',
+        component:ReactiveComponent
     }
 ];
