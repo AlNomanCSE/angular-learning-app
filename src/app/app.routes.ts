@@ -5,6 +5,7 @@ import { StructuralDirectiveComponent } from './components/structural-directive/
 import { IfelseComponent } from './components/ifelse/ifelse.component';
 import { TemplateComponent } from './components/forms/template/template.component';
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
+import { PipecomponentComponent } from './components/pipecomponent/pipecomponent.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path:'reactiveForm',
         component:ReactiveComponent
+    },
+    {
+        path: 'pipe',
+        component:PipecomponentComponent
     }
 ];
