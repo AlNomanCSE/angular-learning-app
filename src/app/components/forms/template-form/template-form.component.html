@@ -1,0 +1,87 @@
+
+
+<p>template-form works!</p>
+
+<div class="bg-white p-10 rounded-lg shadow-lg w-96">
+    <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">User  Information</h2>
+    <form #myForm="ngForm">
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">First Name</label>
+            <div>
+                <div class="mt-1 flex flex-col">
+                    <p *ngIf="(fnam.touched || fnam.dirty) && fnam.errors?.['required']" class="text-red-600">First Name is required</p>
+                    <p *ngIf="(fnam.touched || fnam.dirty) && fnam.errors?.['minlength']" class="text-red-600">First Name must be 3 or more characters long</p>
+                </div>
+            </div>
+            <input type="text" 
+             [(ngModel)]="studentObj.firstName"
+             #fnam="ngModel"
+             name="firstName"
+             required
+             minlength="3"
+            placeholder="Enter your first name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Last Name</label>
+            <input type="text"
+            [(ngModel)]="studentObj.lastName"
+            name="lastName"
+            required
+             placeholder="Enter your last name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Username</label>
+            <input type="text" 
+            [(ngModel)]="studentObj.userName"
+            name="userName"
+            required
+            placeholder="Enter your username" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">City</label>
+            <input type="text" 
+            [(ngModel)]="studentObj.city"
+            name="city"
+            required
+            placeholder="Enter your city" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">State</label>
+            <select
+            [(ngModel)]="studentObj.state"
+            name="state"
+            required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+                <option value="">Select your state</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Zip Code</label>
+            <input type="text" 
+            [(ngModel)]="studentObj.zipCode"
+            name="zipCode"  
+            required
+            placeholder="Enter your zip code" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-3 transition duration-200 ease-in-out hover:border-blue-400">
+        </div>
+
+        <div>
+            {{myForm.invalid}}
+            <button type="submit"
+             (click)="onSubmit()"
+             [disabled]="myForm.invalid"
+             class="w-full bg-blue-600 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition duration-200 ease-in-out">Submit</button>
+        </div>
+    </form>
+
+    <p>{{studentObj|json}}</p>
+</div>

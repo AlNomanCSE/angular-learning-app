@@ -3,9 +3,11 @@ import { AttributeDirectiveComponent } from './components/attribute-directive/at
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
 import { IfelseComponent } from './components/ifelse/ifelse.component';
-import { TemplateComponent } from './components/forms/template/template.component';
-import { ReactiveComponent } from './components/forms/reactive/reactive.component';
+
+
 import { PipecomponentComponent } from './components/pipecomponent/pipecomponent.component';
+import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -26,14 +28,16 @@ export const routes: Routes = [
     },
     {
         path:'templateForm',
-        component:TemplateComponent
+        component:TemplateFormComponent
     },
-    {
-        path:'reactiveForm',
-        component:ReactiveComponent
-    },
+   
     {
         path: 'pipe',
         component:PipecomponentComponent
-    }
+    },
+    {
+        path:'reactiveForm',
+        component:ReactiveFormComponent
+    },
+   
 ];
