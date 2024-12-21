@@ -9,6 +9,7 @@ import { PipecomponentComponent } from './components/pipecomponent/pipecomponent
 import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 import { ApiIntegrationComponent } from './components/api-integration/api-integration.component';
+import { InputOutputComponent } from './components/input-output/input-output.component';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,10 @@ export const routes: Routes = [
     {
         path:'api',
         component:ApiIntegrationComponent
+    },
+    {
+        path:'io',
+        component:InputOutputComponent
     }
    
 ];

@@ -1,0 +1,12 @@
+<div
+    class="p-4 mb-4 text-sm text-white rounded-lg dark:text-white"
+    [ngClass]="{
+        'bg-red-500': type === 'Error',
+        'bg-green-500': type === 'Success',
+        'bg-blue-500': type === 'Info',
+        'bg-yellow-500': type === 'Warning'
+    }"
+    role="alert"
+>
+    <span class="font-medium">{{type}}! </span> {{message}}
+</div>
