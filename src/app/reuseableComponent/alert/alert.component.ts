@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -14,4 +14,12 @@ export class AlertComponent {
   @Input() type:string = '';
 
   @Input() bg:string = '';
+
+
+  //this is the output event and in parents html we will listen to this event by this name (closeAlert)
+  @Output() closeAlert = new EventEmitter<string>();
+
+  onClose() {
+    this.closeAlert.emit(this.type); // Emitting the type of alert that was closed
+  }
 } 

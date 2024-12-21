@@ -9,4 +9,10 @@
     role="alert"
 >
     <span class="font-medium">{{type}}! </span> {{message}}
+    <button 
+    (click)="onClose()" 
+    class="ml-2 text-white hover:text-gray-200"
+>
+    ✕
+</button>
 </div>

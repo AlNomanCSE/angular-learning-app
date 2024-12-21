@@ -1,12 +1,14 @@
 <p>input-output works!</p>
 
 <div class="w-[600px] flex justify-center">
-    <app-alert [message]="message" [type]="'Error'"></app-alert>
+    @if(!close){
+        <app-alert [message]="message" [type]="'Error'" (closeAlert)="handleAlertClose($event)"></app-alert>
+    }
 </div>
 
 
 <div class="w-[600px] flex justify-center">
-    <app-alert [message]="'This is Success'" [type]="'Success'"></app-alert>
+    <app-alert [message]="'This is Success'" [type]="'Success'" ></app-alert>
 </div>
 
 
