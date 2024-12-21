@@ -9,5 +9,7 @@ import { AlertComponent } from '../../reuseableComponent/alert/alert.component';
   styles: ``
 })
 export class InputOutputComponent {
-
+  message:string = 'This is a message for Error';
+ 
+  
 }
