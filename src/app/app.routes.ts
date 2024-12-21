@@ -8,6 +8,7 @@ import { IfelseComponent } from './components/ifelse/ifelse.component';
 import { PipecomponentComponent } from './components/pipecomponent/pipecomponent.component';
 import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
+import { ApiIntegrationComponent } from './components/api-integration/api-integration.component';
 
 export const routes: Routes = [
     {
@@ -39,5 +40,9 @@ export const routes: Routes = [
         path:'reactiveForm',
         component:ReactiveFormComponent
     },
+    {
+        path:'api',
+        component:ApiIntegrationComponent
+    }
    
 ];

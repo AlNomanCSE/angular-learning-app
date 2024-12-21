@@ -1,0 +1,31 @@
+<p>api-integration works!</p>
+
+<table class="table-auto" *ngIf="countryList.length > 0; else noData">
+    <thead>
+        <tr>
+            <th>ID Nation</th>
+            <th>Nation</th>
+            <th>ID Year</th>
+            <th>Year</th>
+            <th>Population</th>
+            <th>Slug Nation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countryList; let i = index">
+            <td>{{ country.id }}</td>
+            <td>{{ country.nation }}</td>
+            <td>{{ country.id_year }}</td>
+            <td>{{ country.year }}</td>
+            <td>{{ country.population }}</td>
+            <td>{{ country.slug_nation }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noData>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p *ngIf="!errorMessage">No data available.</p>
+</ng-template>
+
+<button (click)="getCountries()">Click</button>
