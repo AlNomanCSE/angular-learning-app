@@ -1,24 +1,11 @@
 <p>input-output works!</p>
-
+<button (click)="updateMessage()">Update Message</button>
 <div class="w-[600px] flex justify-center">
     @if(!close){
-        <app-alert [message]="message" [type]="'Error'" (closeAlert)="handleAlertClose($event)"></app-alert>
+        <app-alert [message]="message" [type]="'Error'" ></app-alert>
     }
 </div>
 
 
-<div class="w-[600px] flex justify-center">
-    <app-alert [message]="'This is Success'" [type]="'Success'" ></app-alert>
-</div>
-
-
-<div class="w-[600px] flex justify-center">
-    <app-alert [message]="'This is info Box Alert'" [type]="'Info'"></app-alert>
-</div>
-
-
-<div class="w-[600px] flex justify-center">
-    <app-alert [message]="'This is a Worning'" [type]="'Warning'"></app-alert>
-</div>
 
 
