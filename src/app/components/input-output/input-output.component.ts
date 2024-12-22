@@ -11,14 +11,7 @@ import { AlertComponent } from '../../reuseableComponent/alert/alert.component';
 export class InputOutputComponent {
   message:string = 'This is a message for Error';
   close:boolean = false;
-  // handleAlertClose(type: string) {
-  //   console.log(`Alert of type ${type} was closed`);
-  //    this.close = true;
-  //   // You can add additi onal logic here
-  // }
-
   updateMessage() {
     this.message = 'Updated message';
   }
-  
 }

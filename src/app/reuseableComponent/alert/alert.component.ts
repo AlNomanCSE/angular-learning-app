@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input,Output,EventEmitter ,OnChanges, SimpleChanges} from '@angular/core';
+import { Component, Input,Output,EventEmitter ,OnChanges, SimpleChanges, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -8,7 +8,7 @@ import { Component, Input,Output,EventEmitter ,OnChanges, SimpleChanges} from '@
   templateUrl: './alert.component.html',
   styles: ``
 })
-export class AlertComponent implements OnChanges {
+export class AlertComponent implements OnChanges,OnInit {
 
   @Input() message:string = '';
 
@@ -22,6 +22,10 @@ export class AlertComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes Called');
   }
+  ngOnInit(): void {
+    console.log('Oninit Called');
+  }
+
   onClose() {
     this.closeAlert.emit(this.type); // Emitting the type of alert that was closed
   }
