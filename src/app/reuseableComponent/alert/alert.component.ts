@@ -8,11 +8,12 @@ import {
     SimpleChanges,
     OnInit,
 } from '@angular/core';
+import { DemoContentComponent } from '../../components/demo-content/demo-content.component';
 
 @Component({
     selector: 'app-alert',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule,DemoContentComponent],
     templateUrl: './alert.component.html',
     styles: ``,
 })
