@@ -1,32 +1,41 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input,Output,EventEmitter ,OnChanges, SimpleChanges, OnInit} from '@angular/core';
+import {
+    Component,
+    Input,
+    Output,
+    EventEmitter,
+    OnChanges,
+    SimpleChanges,
+    OnInit,
+} from '@angular/core';
 
 @Component({
-  selector: 'app-alert',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './alert.component.html',
-  styles: ``
+    selector: 'app-alert',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './alert.component.html',
+    styles: ``,
 })
-export class AlertComponent implements OnChanges,OnInit {
+export class AlertComponent implements OnChanges, OnInit {
+    @Input() message: string = '';
 
-  @Input() message:string = '';
+    @Input() type: string = '';
 
-  @Input() type:string = '';
+    @Input() bg: string = '';
 
-  @Input() bg:string = '';
-
-
-  //this is the output event and in parents html we will listen to this event by this name (closeAlert)
-  @Output() closeAlert = new EventEmitter<string>();
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes Called');
-  }
-  ngOnInit(): void {
-    console.log('Oninit Called');
-  }
-
-  onClose() {
-    this.closeAlert.emit(this.type); // Emitting the type of alert that was closed
-  }
-} 
+    //this is the output event and in parents html we will listen to this event by this name (closeAlert)
+    @Output() closeAlert = new EventEmitter<string>();
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('changes Called');
+    }
+    ngOnInit(): void {
+        console.log('Oninit Called');
+    }
+    // Add ngDoCheck
+    ngDoCheck(): void {
+        console.log('ngDoCheck Called');
+    }
+    onClose() {
+        this.closeAlert.emit(this.type); // Emitting the type of alert that was closed
+    }
+}
